@@ -34,7 +34,7 @@ Example with the `netbsd-9-amd64.json` template.
 
 ## Available boxes
 
-  * `netbsd-9-amd64.json` : Packer template for NetBSD 9.1 amd64
+  * `netbsd-9-amd64.json` : Packer template for NetBSD 9.2 amd64
   * `netbsd-8-amd64.json` : Packer template for NetBSD 8.2 amd64
   * `netbsd-7-amd64.json` : Packer template for NetBSD 7.2 amd64
 
@@ -47,11 +47,11 @@ from [pkgsrc](http://pkgsrc.org/) but they can be build
 without any provisioner with a command like the following:
 
 
-    $ packer build -var provisioner="" -var build_suffix=-provisionerless netbsd-8-amd64.json
+    $ packer build -var provisioner="" -var build_suffix=-provisionerless netbsd-9-amd64.json
     ...
     ==> Builds finished. The artifacts of successful builds are:
-    --> virtualbox-iso: VM files in directory: packer-netbsd-8.1-amd64-provisionerless-virtualbox
-    --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-8.1-amd64-provisionerless-virtualbox.box
+    --> virtualbox-iso: VM files in directory: packer-netbsd-9.2-amd64-provisionerless-virtualbox
+    --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-9.2-amd64-provisionerless-virtualbox.box
     $
 
 Defining the Packer variable `build_suffix` is not required
