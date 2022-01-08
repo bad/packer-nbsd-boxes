@@ -39,7 +39,7 @@ mount -o async /dev/wd0a $r
 # extract sets
 sets="base etc comp games kern-GENERIC man misc modules tests text xbase xcomp xetc xfont xserver"
 for s in $sets; do
-  ( cd $r && tar --chroot -zxhepf /amd64/binary/sets/$s.tgz )
+  ( cd $r && tar --chroot -xzpf /amd64/binary/sets/$s.tgz )
 done
 
 # MAKEDEV
