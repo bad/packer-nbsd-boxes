@@ -34,7 +34,7 @@ disklabel -w -f /tmp/newdisktab.$$ wd0 mylabel
 newfs -O 2 /dev/rwd0a
 
 # mount root
-mount /dev/wd0a $r
+mount -o async /dev/wd0a $r
 
 # extract sets
 for s in base etc comp games kern-GENERIC man misc modules tests text xbase xcomp xetc xfont xserver; do
@@ -108,3 +108,9 @@ chmod 0600 $r/home/vagrant/.ssh/authorized_keys
 chroot $r chown -R vagrant /home/vagrant/.ssh
 echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> $r/usr/pkg/etc/sudoers.d/vagrant
 chmod 0400 $r/usr/pkg/etc/sudoers.d/vagrant
+
+# stop dhcpcd so that we can unmount $r
+chroot $r dhcpcd -4 -x wm0
+
+# flush dirty buffers to disk
+umount $r
