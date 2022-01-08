@@ -62,7 +62,7 @@
   ],
   "variables" : {
     "build_suffix" : "",
-    "mirror": "http://ftp.netbsd.org/pub/NetBSD",
+    "mirror": "http://archive.netbsd.org/pub/NetBSD-archive",
     "provisioner" : "ansible:chef:puppet",
     "release" : "6.1.5"
   }

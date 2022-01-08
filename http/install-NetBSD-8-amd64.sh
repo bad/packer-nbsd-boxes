@@ -92,8 +92,8 @@ kill -TERM $(cat /var/run/dhcpcd-wm0.pid)
 chroot $r dhcpcd wm0
 
 # setup pkgin
-chroot $r pkg_add http://ftp.NetBSD.org/pub/pkgsrc/packages/NetBSD/amd64/$release/All/pkgin
-sed -e 's,^[^#].*$,http://ftp.NetBSD.org/pub/pkgsrc/packages/NetBSD/$arch/'$release'/All,' $r/usr/pkg/etc/pkgin/repositories.conf > /tmp/repositories.conf
+chroot $r pkg_add http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/amd64/$release/All/pkgin
+sed -e 's,^[^#].*$,http://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/$arch/'$release'/All,' $r/usr/pkg/etc/pkgin/repositories.conf > /tmp/repositories.conf
 mv /tmp/repositories.conf $r/usr/pkg/etc/pkgin/repositories.conf
 chroot $r pkgin -y update
 
