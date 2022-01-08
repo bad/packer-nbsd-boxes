@@ -37,7 +37,8 @@ newfs -O 2 /dev/rwd0a
 mount -o async /dev/wd0a $r
 
 # extract sets
-for s in base etc comp games kern-GENERIC man misc modules tests text xbase xcomp xetc xfont xserver; do
+sets="base etc comp games kern-GENERIC man misc modules tests text xbase xcomp xetc xfont xserver"
+for s in $sets; do
   ( cd $r && tar --chroot -zxhepf /amd64/binary/sets/$s.tgz )
 done
 
