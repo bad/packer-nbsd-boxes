@@ -6,7 +6,7 @@ set -e
 
 #
 r=/targetroot
-release=7.1.2 # XXX
+release=7.2
 
 # disk partition
 cat <<EOF > /tmp/sed.$$

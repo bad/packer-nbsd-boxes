@@ -9,7 +9,7 @@
       "guest_additions_mode": "disable",
       "guest_os_type": "NetBSD_64",
       "http_directory": "http",
-      "iso_checksum": "sha512:aaccacbfa3ee5a497170025aed9426de1ef91f8f7ebdaf862bd178c4922a5db1b82171832c916acd7a4e2038dd9ec39ef1061c41d98c5b5af56e3165cc945539",
+      "iso_checksum": "sha512:976ae57aff4f1d34e66310f4d7b18f3e28356b9a3f13958d313530a790d2800c618c7e26467bc78095e10cdeee665a1fd45192129a4bff218dfa110e785c3ef3",
       "iso_urls": [
         "iso/NetBSD-{{user `release`}}-amd64.iso",
         "{{user `mirror`}}/NetBSD-{{user `release`}}/images/NetBSD-{{user `release`}}-amd64.iso"
@@ -65,7 +65,7 @@
     "build_suffix" : "",
     "mirror": "http://archive.netbsd.org/pub/NetBSD-archive",
     "provisioner" : "ansible:chef:puppet",
-    "release" : "7.1.2",
+    "release" : "7.2",
     "ruby_version" : "ruby25"
   }
 }
