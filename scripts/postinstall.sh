@@ -17,7 +17,7 @@ case ":$PROVISIONER:" in
 ;;
 esac
 
-# 
+#
 case ":$PROVISIONER:" in
 *:puppet:*)
   pkgin -y install ${RUBY_VERSION}-puppet

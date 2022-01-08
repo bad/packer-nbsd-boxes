@@ -45,7 +45,7 @@ from [pkgsrc](http://pkgsrc.org/) but they can be build
 without any provisioner with a command like the following:
 
 
-    $ packer build -var provisioner="" -var build_suffix=-provisionerless netbsd-8-amd64.json 
+    $ packer build -var provisioner="" -var build_suffix=-provisionerless netbsd-8-amd64.json
     ...
     ==> Builds finished. The artifacts of successful builds are:
     --> virtualbox-iso: VM files in directory: packer-netbsd-8.1-amd64-provisionerless-virtualbox
@@ -77,9 +77,9 @@ required, no matter the version of Vagrant used.
 
 Add something like the following to your `Vagrantfile`:
 
-  
+
     Vagrant.configure("2") do |config|
-      
+
       # Only NFS synced folder are supported.
       # And note that a private network with static IP is required
       config.vm.network :private_network, ip: "192.168.33.10"
