@@ -13,21 +13,21 @@ both as a builder and as a post-processor provider.
 Install [Packer](http://packer.io) then from the top-level of this
 project, validate and build a Packer template.
 
-Example with the `netbsd-6-amd64.json` template.
+Example with the `netbsd-8-amd64.json` template.
 
 * Check that the template is valid:
 
-        $ packer validate netbsd-6-amd64.json
+        $ packer validate netbsd-8-amd64.json
         Template validated successfully.
         $
 
 * Build the box image from the template:
 
-        $ packer build netbsd-6-amd64.json
+        $ packer build netbsd-8-amd64.json
         ...
         ==> Builds finished. The artifacts of successful builds are:
-        --> virtualbox-iso: VM files in directory: packer-netbsd-6.1.5-amd64-virtualbox
-        --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-6.1.5-amd64-virtualbox.box
+        --> virtualbox-iso: VM files in directory: packer-netbsd-8.1-amd64-virtualbox
+        --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-8.1-amd64-virtualbox.box
         $
 
 * The box image is available in the `builds/` subdirectory.
@@ -36,7 +36,6 @@ Example with the `netbsd-6-amd64.json` template.
 
   * `netbsd-8-amd64.json` : Packer template for NetBSD 8.1 amd64
   * `netbsd-7-amd64.json` : Packer template for NetBSD 7.1.2 amd64
-  * `netbsd-6-amd64.json` : Packer template for NetBSD 6.1.5 amd64
 
 
 ## Boxes without provisioners
@@ -46,11 +45,11 @@ from [pkgsrc](http://pkgsrc.org/) but they can be build
 without any provisioner with a command like the following:
 
 
-    $ packer build -var provisioner="" -var build_suffix=-provisionerless netbsd-6-amd64.json 
+    $ packer build -var provisioner="" -var build_suffix=-provisionerless netbsd-8-amd64.json 
     ...
     ==> Builds finished. The artifacts of successful builds are:
-    --> virtualbox-iso: VM files in directory: packer-netbsd-6.1.5-amd64-provisionerless-virtualbox
-    --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-6.1.5-amd64-provisionerless-virtualbox.box
+    --> virtualbox-iso: VM files in directory: packer-netbsd-8.1-amd64-provisionerless-virtualbox
+    --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-8.1-amd64-provisionerless-virtualbox.box
     $
 
 Defining the Packer variable `build_suffix` is not required
