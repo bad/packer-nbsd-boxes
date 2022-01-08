@@ -6,7 +6,7 @@ set -e
 
 #
 r=/targetroot
-release=8.0 # XXX waiting for 8.1 packages build
+release=8.1
 
 # disk partition
 cat <<EOF > /tmp/sed.$$
