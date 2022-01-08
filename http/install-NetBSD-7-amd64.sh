@@ -50,8 +50,8 @@ mkdir $r/proc
 cat <<EOF > $r/etc/fstab
 /dev/wd0a /    ffs  rw,log 1 1
 /dev/wd0b none swap sw,dp  0 0
-/kern /kern kernfs rw 0 0
-/proc /proc procfs rw 0 0
+kernfs /kern kernfs rw 0 0
+procfs /proc procfs rw 0 0
 fdesc /dev fdesc ro,-o=union 0 0
 ptyfs /dev/pts ptyfs rw 0 0
 tmpfs /tmp tmpfs rw,-s96M
