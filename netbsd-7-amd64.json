@@ -51,7 +51,8 @@
     {
       "environment_vars": [
         "PROVISIONER={{user `provisioner`}}",
-	"NBSD_RELEASE={{user `release`}}"
+	"NBSD_RELEASE={{user `release`}}",
+        "RUBY_VERSION={{user `ruby_version`}}"
       ],
       "execute_command": "echo vagrant | {{.Vars}} sudo -E -S sh '{{.Path}}'",
       "scripts": [
@@ -64,6 +65,7 @@
     "build_suffix" : "",
     "mirror": "http://archive.netbsd.org/pub/NetBSD-archive",
     "provisioner" : "ansible:chef:puppet",
-    "release" : "7.1.2"
+    "release" : "7.1.2",
+    "ruby_version" : "ruby25"
   }
 }

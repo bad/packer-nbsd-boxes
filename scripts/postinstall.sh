@@ -13,13 +13,13 @@ esac
 #
 case ":$PROVISIONER:" in
 *:chef:*)
-  pkgin -y install ruby24-chef
+  pkgin -y install ${RUBY_VERSION}-chef
 ;;
 esac
 
 # 
 case ":$PROVISIONER:" in
 *:puppet:*)
-  pkgin -y install ruby24-puppet
+  pkgin -y install ${RUBY_VERSION}-puppet
 ;;
 esac
