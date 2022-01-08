@@ -2,9 +2,9 @@
   "builders": [
     {
       "boot_command": [
-        "<enter><enter>e<enter><enter>dhcpcd wm0<enter>sleep 2<enter>ftp -o /tmp/i.sh http://{{ .HTTPIP }}:{{ .HTTPPort }}/install-NetBSD-7-amd64.sh<enter>sh /tmp/i.sh<enter>reboot<enter>"
+        "<enter><wait15><enter><enter>e<enter><enter>dhcpcd wm0<enter>sleep 2<enter>ftp -o /tmp/i.sh http://{{ .HTTPIP }}:{{ .HTTPPort }}/install-NetBSD-7-amd64.sh<enter>sh /tmp/i.sh<enter>reboot<enter>"
       ],
-      "boot_wait": "50s",
+      "boot_wait": "5s",
       "disk_size": 10140,
       "guest_additions_mode": "disable",
       "guest_os_type": "NetBSD_64",
