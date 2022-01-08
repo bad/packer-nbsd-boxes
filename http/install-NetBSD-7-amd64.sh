@@ -88,8 +88,8 @@ sed -e 's/^rc_configured=NO/rc_configured=YES/' $r/etc/rc.conf > /tmp/rc.conf
 cp /tmp/rc.conf $r/etc/rc.conf
 
 # kill dhcpcd and relaunch it in chroot
-dhcpcd -x wm0
-chroot $r dhcpcd wm0
+dhcpcd -4 -x wm0
+chroot $r dhcpcd -4 -w wm0
 
 # setup pkgin
 chroot $r pkg_add http://archive.NetBSD.org/pub/pkgsrc-archive/packages/NetBSD/amd64/$release/All/pkgin
