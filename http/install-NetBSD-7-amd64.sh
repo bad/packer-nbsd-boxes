@@ -88,7 +88,7 @@ sed -e 's/^rc_configured=NO/rc_configured=YES/' $r/etc/rc.conf > /tmp/rc.conf
 cp /tmp/rc.conf $r/etc/rc.conf
 
 # kill dhcpcd and relaunch it in chroot
-kill -TERM $(cat /var/run/dhcpcd-wm0.pid)
+dhcpcd -x wm0
 chroot $r dhcpcd wm0
 
 # setup pkgin
