@@ -98,12 +98,12 @@ mv /tmp/repositories.conf $r/usr/pkg/etc/pkgin/repositories.conf
 chroot $r pkgin -y update
 
 # install some packages for vagrant user
-chroot $r /usr/pkg/bin/pkgin -y install bash sudo wget
+chroot $r /usr/pkg/bin/pkgin -y install bash sudo
 
 # vagrant user
 chroot $r useradd -s /usr/pkg/bin/bash -d /home/vagrant -m -g staff -G wheel -p "$passhash" vagrant
 mkdir -pm 700 $r/home/vagrant/.ssh
-chroot $r /usr/pkg/bin/wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub' -O /home/vagrant/.ssh/authorized_keys
+chroot $r ftp -o /home/vagrant/.ssh/authorized_keys 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub'
 chmod 0600 $r/home/vagrant/.ssh/authorized_keys
 chroot $r chown -R vagrant /home/vagrant/.ssh
 echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> $r/usr/pkg/etc/sudoers.d/vagrant
