@@ -13,28 +13,28 @@ both as a builder and as a post-processor provider.
 Install [Packer](http://packer.io) then from the top-level of this
 project, validate and build a Packer template.
 
-Example with the `netbsd-8-amd64.json` template.
+Example with the `netbsd-9-amd64.json` template.
 
 * Check that the template is valid:
 
-        $ packer validate netbsd-8-amd64.json
+        $ packer validate netbsd-9-amd64.json
         Template validated successfully.
         $
 
 * Build the box image from the template:
 
-        $ packer build netbsd-8-amd64.json
+        $ packer build netbsd-9-amd64.json
         ...
         ==> Builds finished. The artifacts of successful builds are:
-        --> virtualbox-iso: VM files in directory: packer-netbsd-8.1-amd64-virtualbox
-        --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-8.1-amd64-virtualbox.box
+        --> virtualbox-iso: VM files in directory: packer-netbsd-9.2-amd64-virtualbox
+        --> virtualbox-iso: 'virtualbox' provider box: ./builds/netbsd-9.2-amd64-virtualbox.box
         $
 
 * The box image is available in the `builds/` subdirectory.
 
 ## Available boxes
 
-  * `netbsd-9-amd64.json` : Packer template for NetBSD 9.0 amd64
+  * `netbsd-9-amd64.json` : Packer template for NetBSD 9.1 amd64
   * `netbsd-8-amd64.json` : Packer template for NetBSD 8.2 amd64
   * `netbsd-7-amd64.json` : Packer template for NetBSD 7.2 amd64
 
